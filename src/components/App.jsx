@@ -11,11 +11,11 @@ class App extends React.Component {
 
     this.state = {
       selectedVideo: exampleVideoData[0]
-    }
+    };
   }
 
   onListClick(index) {
-    console.log(index)
+    console.log(index);
   }
 
   render() {
