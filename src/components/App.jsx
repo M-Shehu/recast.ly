@@ -8,14 +8,24 @@ import VideoList from './VideoList.js';
 class App extends React.Component {
   constructor(props) {
     super(props);
-
+    this.onListClick = this.onListClick.bind(this);
     this.state = {
       selectedVideo: exampleVideoData[0]
     };
   }
 
-  onListClick(index) {
-    console.log(index);
+
+  onListClick(event) {
+    for (var i = 0; i < exampleVideoData.length; i++) {
+      if (exampleVideoData[i].snippet.title.trim() === event.target.textContent.trim()) {
+        console.log('Done');
+        
+        this.setState({
+          selectedVideo: exampleVideoData[i]
+        })
+      }
+    }
+    // console.log(_.contains(exampleVideoData, event.target.textContent));
   }
 
   render() {
@@ -30,8 +40,8 @@ class App extends React.Component {
           <div className="col-md-7">
             <VideoPlayer video = {this.state.selectedVideo}/>/
           </div>
-          <div className="col-md-5" onClick={this.onListClick.bind(this)}>
-            <VideoList videos = {exampleVideoData}/>
+          <div className="col-md-5" >
+            <VideoList videos = {exampleVideoData} onClickF = {this.onListClick}/>
           </div>
         </div>
       </div>
