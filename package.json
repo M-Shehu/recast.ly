@@ -6,6 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
+    "start": "babel . --out-dir compiled --presets=react --ignore=node_modules,compiled --source-maps inline --watch & live-server & live-server --open=./SpecRunner.html",
     "test": "live-server --open=./SpecRunner.html --port=8081",
     "postinstall": "curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash"
   },
@@ -20,8 +21,10 @@
     "babel-cli": "^6.6.5",
     "babel-plugin-react": "1.0.0",
     "babel-preset-react": "^6.5.0",
+    "babel-watch": "^7.0.0",
     "chai": "^3.5.0",
     "mocha": "2.3.3",
     "sinon": "1.17.3"
   }
 }
+
