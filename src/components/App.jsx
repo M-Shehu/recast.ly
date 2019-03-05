@@ -8,6 +8,14 @@ import VideoList from './VideoList.js';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      selectedVideo: exampleVideoData[0]
+    }
+  }
+
+  onListClick(index) {
+    console.log(index)
   }
 
   render() {
@@ -20,14 +28,14 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <VideoPlayer video = {exampleVideoData}/>/
+            <VideoPlayer video = {this.state.selectedVideo}/>/
           </div>
-          <div className="col-md-5">
-            {/* <VideoList /> */}
+          <div className="col-md-5" onClick={this.onListClick.bind(this)}>
+            <VideoList videos = {exampleVideoData}/>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
