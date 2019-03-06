@@ -38,18 +38,19 @@ class App extends React.Component {
 
   handleTextField(event) {
    
-
     var options = {
       query: event.target.value,
       max: 5,
       key: YOUTUBE_API_KEY
     };
+
+    this.setState({searchValue: event.target.value});
     
     this.props.searchYouTube(options, (data) => {
+      
       this.setState({
         allVideos: data,
-        selectedVideo: data[0],
-        searchValue: event.target.value,
+        selectedVideo: data[0]
       });
     });
   }
