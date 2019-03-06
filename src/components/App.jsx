@@ -47,7 +47,6 @@ class App extends React.Component {
     this.setState({searchValue: event.target.value});
     
     this.props.searchYouTube(options, (data) => {
-      
       this.setState({
         allVideos: data,
         selectedVideo: data[0]
@@ -62,12 +61,13 @@ class App extends React.Component {
       key: YOUTUBE_API_KEY
     };
 
-    searchYouTube(options, function(data) {
+    this.props.searchYouTube(options, (data) => {
+      
       this.setState({
         allVideos: data,
         selectedVideo: data[0]
       });
-    }.bind(this));
+    });
   }
 
   onListClick(event) {
