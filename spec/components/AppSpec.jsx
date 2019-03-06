@@ -48,7 +48,7 @@ describe('App', function() {
     });
   });
 
-  xdescribe('when rendering live data from YouTube', function() {
+  describe('when rendering live data from YouTube', function() {
     var searchYouTubeStub;
 
     beforeEach(function() {
@@ -69,6 +69,7 @@ describe('App', function() {
       var videoEntryTitleElements = scryRenderedDOMComponentsWithClass(app, 'video-list-entry-title');
 
       videoEntryTitleElements.forEach((videoEntryTitle, i) =>
+      
         expect(videoEntryTitle.innerHTML).to.equal(fakeVideoData[i].snippet.title)
       );
     });
