@@ -1,7 +1,7 @@
 # Recast.ly
 
 ## Project Description
-A full stack app to aggregate videos from YouTube. YouTube videos can be watched from the app.
+A full stack app built in React to aggregate videos from YouTube. YouTube videos can be watched from the app.
 
 ## Usage
 Run the following command to run the code in development mode. Don't worry, it runs all necessary scripts in this one command.
